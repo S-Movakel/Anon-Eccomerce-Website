@@ -1,0 +1,2826 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="/assets/img/logo/favicon.ico" type="image/x-icon">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="overlay" data-overlay></div>
+
+    <!-- MODAL -->
+    <div class="modal closed" data-modal>
+        <div class="modal-close-overlay" data-modal-overlay></div>
+        <div class="modal-content">
+            <button class="modal-close-btn" data-modal-close>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="newsletter-img">
+                <img src="./assets/img/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+            </div>
+
+            <div class="newsletter">
+                <form action="#">
+                    <div class="newsletter-header">
+                        <h3 class="newsletter-title">عضویت در خبرنامه</h3>
+                        <p class="newsletter-desc">برای دریافت آخرین محصولات و تخفیف ها در <b>آلفاد</b> عضو</p>
+                    </div>
+
+                    <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+                    <button type="submit" class="btn-newsletter">عضویت</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- notification toast -->
+    <div class="notification-toast closed" data-toast>
+        <button class="toast-close-btn" data-toast-close>
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <div class="toast-banner">
+            <img src="/assets/img/products/jewellery-1.jpg" alt="گوشواره رزگلد" width="80" height="70">
+        </div>
+        <div class="toast-detail">
+            <p class="toast-message">
+                یک نفر به تازگی این محصول را خریداری کرده
+            </p>
+
+            <p class="toast-title">
+                گوشواره رز گلد
+            </p>
+
+            <p class="toast-meta">
+                <time datetime="PT2M">2 دقیقه</time> قبل
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <ul class="header-social-container">
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="header-alert-news">
+                    <p>
+                        <b>حمل و نقل رایگان</b>
+                        ارسال رایگان این هفته برای سفارش بیش از 500 هزار تومان
+                    </p>
+                </div>
+
+                <div class="header-top-actions">
+                    <select name="currency">
+                        <option value="toman">تومان</option>
+                        <option value="usd">&dollar;USD</option>
+                    </select>
+                    <select name="language" id="">
+                        <option value="fa-Persian">فارسی</option>
+                        <option value="en-US">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="header-logo">
+                    <img src="./assets/img/logo/logo.svg" alt="آلفاد لوگو" width="120px" height="36">
+                </a>
+
+                <div class="header-search-container">
+                    <input type="search" name="search" class="search-field"
+                        placeholder="نام محصول خود را وارد کنید ...">
+                    <button class="search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="header-user-actions">
+                    <button class="action-btn">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </button>
+
+                    <button class="action-btn">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+
+                    <button class="action-btn">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="desktop-navigation-menu">
+            <div class="container">
+                <ul class="desktop-menu-category-list">
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            خانه
+                        </a>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            دسته بندی
+                        </a>
+                            <div class="dropdown-panel">
+                                <ul class="dropdown-panel-list">
+                                    <li class="menu-title">
+                                        <a href="#">الکترونیک</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">دسکتاپ</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">لپتاپ</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">دوربین</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">تبلت</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">هدفون</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">
+                                            <img src="./assets/img/electronics-banner-1.jpg" alt="کالکشن هدفون"
+                                                width="250" height="119">
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="dropdown-panel-list">
+                                    <li class="menu-title">
+                                        <a href="#">مردانه</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">رسمی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">مجلسی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">اسپورت</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">ژاکت</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">عینک آفتابی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">
+                                            <img src="./assets/img/mens-banner.jpg" alt="کالکشن هدفون" width="250"
+                                                height="119">
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="dropdown-panel-list">
+                                    <li class="menu-title">
+                                        <a href="#">زنانه</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">رسمی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">مجلسی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">عطر</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">لوازم آرایشی</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">کیف</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">
+                                            <img src="./assets/img/womens-banner.jpg" alt="کالکشن هدفون" width="250"
+                                                height="119">
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="dropdown-panel-list">
+                                    <li class="menu-title">
+                                        <a href="#">الکترونیک</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">ساعت هوشمند</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">تلوزیون هوشمند</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">کیبورد</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">موس</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">میکروفون</a>
+                                    </li>
+                                    <li class="panel-list-item">
+                                        <a href="#">
+                                            <img src="./assets/img/electronics-banner-2.jpg" alt="کالکشن هدفون"
+                                                width="250" height="119">
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            مردانه
+                        </a>
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item">
+                                    <a href="#">پیراهن</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">شلوار جین</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">کفش</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">کیف پول</a>
+                                </li>
+                            </ul>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            زنانه
+                        </a>
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item">
+                                    <a href="#">لباس و روپوش</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">گوشواره</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">گردنبند</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">پک لوازم آرایشی</a>
+                                </li>
+                            </ul>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            جواهرات
+                        </a>
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item">
+                                    <a href="#">گوشواره</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">گردنبند</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">حلقه ازدواج</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">دستبند</a>
+                                </li>
+                            </ul>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            عطر
+                        </a>
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item">
+                                    <a href="#">زنانه</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">مردانه</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">عطر گل</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#">خوشبو کننده هوا</a>
+                                </li>
+                            </ul>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            بلاگ
+                        </a>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">
+                            تخیف های ویژه
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mobile-bottom-navigation">
+            <button class="action-btn" data-mobile-menu-open-btn>
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <button class="action-btn">
+                <ion-icon name="bag-handle-outline"></ion-icon>
+                <span class="count">0</span>
+            </button>
+
+            <button class="action-btn">
+                <ion-icon name="home-outline"></ion-icon>
+            </button>
+
+            <button class="action-btn">
+                <ion-icon name="heart-outline"></ion-icon>
+                <span class="count">0</span>
+            </button>
+
+            <button class="action-btn" data-mobile-menu-open-btn>
+                <ion-icon name="grid-outline"></ion-icon>
+            </button>
+
+        </div>
+
+        <nav class="mobile-navigation-menu has-scrollbar" data-mobile-menu>
+            <div class="menu-top">
+                <h2 class="menu-title">منو</h2>
+
+                <button class="menu-close-btn" data-mobile-menu-close-btn>
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+
+            <ul class="mobile-menu-category-list">
+                <li class="menu-category">
+                    <a href="#" class="menu-title">خانه</a>
+                </li>
+
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">مردانه</p>
+
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">پیراهن</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">شلوار جین</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">کفش</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">کیف پول</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">زنانه</p>
+
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">لباس و روپوش</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">گوشواره</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">گردنبند</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">پک لوازم آرایشی</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">جواهرات</p>
+
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">گوشواره</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">گردنبند</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">حلقه ازدواج</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">دستبند</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-category">
+                    <button class="accordion-menu" data-accordion-btn>
+                        <p class="menu-title">عطر</p>
+
+                        <div>
+                            <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                            <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                        </div>
+                    </button>
+
+                    <ul class="submenu-category-list" data-accordion>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">زنانه</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">مردانه</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">عطر گل</a>
+                        </li>
+                        <li class="submenu-category">
+                            <a href="#" class="submenu-title">خوشبو کننده هوا</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-category">
+                    <a href="#" class="menu-title">بلاگ</a>
+                </li>
+
+                <li class="menu-category">
+                    <a href="#" class="menu-title">تخفیف های ویژه</a>
+                </li>
+            </ul>
+
+            <div class="menu-bottom">
+                <ul class="menu-category-list">
+                    <li class="menu-category">
+                        <button class="accordion-menu" data-accordion-btn>
+                            <p class="menu-title">
+                                زبان
+                            </p>
+                            <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+                        </button>
+
+                        <ul class="submenu-category-list" data-accordion>
+                            <li class="submenu-category">
+                                <a href="#" class="submenu-title">فارسی</a>
+                            </li>
+                            <li class="submenu-category">
+                                <a href="#" class="submenu-title">English</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-category">
+                        <button class="accordion-menu" data-accordion-btn>
+                            <p class="menu-title">
+                                واحد پول
+                            </p>
+                            <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+                        </button>
+
+                        <ul class="submenu-category-list" data-accordion>
+                            <li class="submenu-category">
+                                <a href="#" class="submenu-title">تومان</a>
+                            </li>
+                            <li class="submenu-category">
+                                <a href="#" class="submenu-title">&dollar; USD</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="menu-social-container">
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Banner -->
+        <div class="banner">
+            <div class="container">
+                <div class="slider-container has-scrollbar">
+                    <div class="slider-item">
+                        <img src="./assets/img/banner-1.jpg" alt="فروش آخرین مد زنانه" class="banner-img">
+
+                        <div class="banner-content">
+                            <p class="banner-subtitle">محصول پرطرفدار</p>
+                            <h2 class="banner-title">فروش آخرین مد زنانه</h2>
+                            <p class="banner-text">
+                                شروع قیمت از <b>100</b> هزار تومان
+                            </p>
+                            <a href="#" class="banner-btn">همین الان بخر</a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./assets/img/banner-2.jpg" alt="عینک آفتابی مدرن" class="banner-img">
+
+                        <div class="banner-content">
+                            <p class="banner-subtitle">محصول پرطرفدار</p>
+                            <h2 class="banner-title">عینک آفتابی مدرن</h2>
+                            <p class="banner-text">
+                                شروع قیمت از <b>100</b> هزار تومان
+                            </p>
+                            <a href="#" class="banner-btn">همین الان بخر</a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./assets/img/banner-3.jpg" alt="فروش مد تابستانی جدید" class="banner-img">
+
+                        <div class="banner-content">
+                            <p class="banner-subtitle">محصول پرطرفدار</p>
+                            <h2 class="banner-title">فروش مد تابستانی جدید</h2>
+                            <p class="banner-text">
+                                شروع قیمت از <b>100</b> هزار تومان
+                            </p>
+                            <a href="#" class="banner-btn">همین الان بخر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category -->
+        <div class="category">
+            <div class="container">
+                <div class="category-item-container has-scrollbar">
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/dress.svg" alt="لباس و روپوش" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">لباس و روپوش</h3>
+                                <p class="category-item-amount">(53)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+
+                        </div>
+
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/coat.svg" alt="لباس زمستانی" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">لباس زمستانی</h3>
+                                <p class="category-item-amount">(58)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/glasses.svg" alt="عینک" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">عینک</h3>
+                                <p class="category-item-amount">(68)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/shorts.svg" alt="شلوار جین" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">شلوار جین</h3>
+                                <p class="category-item-amount">(84)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/tee.svg" alt="تیشرت" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">تیشرت</h3>
+                                <p class="category-item-amount">(35)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/jacket.svg" alt="ژاکت" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">ژاکت</h3>
+                                <p class="category-item-amount">(16)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/watch.svg" alt="ساعت" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">ساعت</h3>
+                                <p class="category-item-amount">(27)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="category-img-box">
+                            <img src="./assets/img/icons/hat.svg" alt="کلاه" width="30">
+                        </div>
+
+                        <div class="category-content-box">
+                            <div class="category-content-flex">
+                                <h3 class="category-item-title">کلاه</h3>
+                                <p class="category-item-amount">(39)</p>
+                            </div>
+                            <a href="#" class="category-btn">همه رو نشون بده</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product -->
+        <div class="product-container">
+            <div class="container">
+                <!-- SideBar -->
+                <div class="sidebar has-scrollbar" data-mobile-menu>
+                    <div class="sidebar-category">
+                        <div class="sidebar-top">
+                            <h2 class="sidebar-title">دسته بندی</h2>
+                            <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
+                        </div>
+
+                        <ul class="sidebar-menu-category-list">
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/dress.svg" alt="لباس" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">لباس</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">پیراهن</p>
+                                            <data value="300" class="stock" title="available stock">300</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">شلوار جین</p>
+                                            <data value="60" class="stock" title="available stock">60</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">ژاکت</p>
+                                            <data value="50" class="stock" title="available stock">50</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">لباس و روپوش</p>
+                                            <data value="87" class="stock" title="available stock">87</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/shoes.svg" alt="کفش" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">کفش</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">ورزشی</p>
+                                            <data value="45" class="stock" title="available stock">45</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">رسمی</p>
+                                            <data value="75" class="stock" title="available stock">75</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">راحتی</p>
+                                            <data value="35" class="stock" title="available stock">35</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">ایمنی</p>
+                                            <data value="26" class="stock" title="available stock">26</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/jewelry.svg" alt="جواهرات" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">جواهرات</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">گوشواره</p>
+                                            <data value="46" class="stock" title="available stock">46</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">حلقه ازدواج</p>
+                                            <data value="73" class="stock" title="available stock">73</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">گردنبند</p>
+                                            <data value="61" class="stock" title="available stock">61</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/perfume.svg" alt="عطر" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">عطر</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">مردانه</p>
+                                            <data value="12" class="stock" title="available stock">12 pcs</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">زنانه</p>
+                                            <data value="60" class="stock" title="available stock">60 pcs</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">سرد</p>
+                                            <data value="50" class="stock" title="available stock">50 pcs</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">گرم</p>
+                                            <data value="87" class="stock" title="available stock">87 pcs</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/cosmetics.svg" alt="لوازم آرایشی" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">لوازم آرایشی</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">شامپو</p>
+                                            <data value="68" class="stock" title="available stock">68</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">ضد آفتاب</p>
+                                            <data value="46" class="stock" title="available stock">46</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">شامپو بدن</p>
+                                            <data value="79" class="stock" title="available stock">79</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">پک لوازم آرایشی</p>
+                                            <data value="23" class="stock" title="available stock">23</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/glasses.svg" alt="عینک" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">عینک</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">لنز</p>
+                                            <data value="50" class="stock" title="available stock">50</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">عینک افتابی</p>
+                                            <data value="48" class="stock" title="available stock">48</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-menu-category">
+                                <button class="sidebar-accordion-menu" data-accordion-btn>
+                                    <div class="menu-title-flex">
+                                        <img src="./assets/img/icons/dress.svg" alt="کیف" class="menu-title-img" width="20" height="20">
+                                        <p class="menu-title">کیف</p>
+                                    </div>
+                                    <div>
+                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                                    </div>
+                                </button>
+
+                                <ul class="sidebar-submenu-category-list" data-accordion>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">ساک مسافرتی</p>
+                                            <data value="62" class="stock" title="available stock">62</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">کوله پشتی</p>
+                                            <data value="35" class="stock" title="available stock">35</data>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-submenu-category">
+                                        <a href="#" class="sidebar-submenu-title">
+                                            <p class="product-name">کیف پول</p>
+                                            <data value="74" class="stock" title="available stock">75</data>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="product-showcase">
+                        <h3 class="showcase-heading">بهترین فروشنده</h3>
+
+                        <div class="showcase-wrapper">
+                            <div class="showcase-container">
+                                <div class="showcase">
+                                    <a href="#" class="showcase-img-box">
+                                        <img src="./assets/img/products/1.jpg" alt="کفش بچه" class="showcase-img" width="75" height="75">
+                                    </a>
+
+                                    <div class="showcase-content">
+                                        <a href="#">
+                                            <h4 class="showcase-title">کفش بچه</h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del>50 هزار تومان</del>
+                                            <p class="price">30 هزار تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase">
+                                    <a href="#" class="showcase-img-box">
+                                        <img src="./assets/img/products/2.jpg" alt="هودی مردانه" class="showcase-img" width="75" height="75">
+                                    </a>
+
+                                    <div class="showcase-content">
+                                        <a href="#">
+                                            <h4 class="showcase-title">هودی مردانه</h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del>450 هزار تومان</del>
+                                            <p class="price">370 هزار تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase">
+                                    <a href="#" class="showcase-img-box">
+                                        <img src="./assets/img/products/3.jpg" alt="تیشرت دخترانه" class="showcase-img" width="75" height="75">
+                                    </a>
+
+                                    <div class="showcase-content">
+                                        <a href="#">
+                                            <h4 class="showcase-title">تیشرت دخترانه</h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del>310 هزار تومان</del>
+                                            <p class="price">180 هزار تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase">
+                                    <a href="#" class="showcase-img-box">
+                                        <img src="./assets/img/products/4.jpg" alt="کلاه پشمی برای آقایان" class="showcase-img" width="75" height="75">
+                                    </a>
+
+                                    <div class="showcase-content">
+                                        <a href="#">
+                                            <h4 class="showcase-title">کلاه پشمی برای آقایان</h4>
+                                        </a>
+
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <del>95 هزار تومان</del>
+                                            <p class="price">50 هزار تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-box">
+                    <!-- product Minimal -->
+                    <div class="product-minimal">
+                        <div class="product-showcase">
+                            <h2 class="title">تازه رسیده ها</h2>
+    
+                            <div class="showcase-wrapper has-scrollbar">
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/watch-3.jpg" alt="کیف چرمی ساعت جیبی" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کیف چرمی ساعت جیبی
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ساعت</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">150 هزار تومان</p>
+                                                <del>110 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-3.jpg" alt="گردنبند قلب گوزن نقره ای" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    گردنبند قلب گوزن نقره ای
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">110 هزار تومان</p>
+                                                <del>95 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/perfume.jpg" alt="عطر زنانه تیتان 100 میلی لیتر" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    عطر زنانه تیتان 100 میلی لیتر
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">عطر</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">78 هزار تومان</p>
+                                                <del>56 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/belt.jpg" alt="کمربند برگشت پذیر چرمی مردانه" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کمربند برگشت پذیر چرمی مردانه
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">کمربند</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">240 هزار تومان</p>
+                                                <del>190 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-2.jpg" alt="انگشتر کلاسیک پلاتین زیرکون" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    انگشتر کلاسیک پلاتین زیرکون
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/watch-1.jpg" alt="ساعت هوشمند حیاتی پلاس" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    ساعت هوشمند حیاتی پلاس
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ساعت</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/shampoo.jpg" alt="بسته های نرم کننده شامپو" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    بسته های نرم کننده شامپو
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">لوازم آرایشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">520 هزار تومان</p>
+                                                <del>410 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-1.jpg" alt="گوشواره طاووس رزگلد" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    گوشواره طاووس رزگلد
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">180 هزار تومان</p>
+                                                <del>140 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-showcase">
+                            <h2 class="title">پرطرفدارها</h2>
+    
+                            <div class="showcase-wrapper has-scrollbar">
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/sports-1.jpg" alt="کفش دویدن و پیاده روی - سفید" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش دویدن و پیاده روی - سفید
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ورزشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">150 هزار تومان</p>
+                                                <del>110 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/sports-2.jpg" alt="کفش دویدن و پیاده روی - مشکی" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش دویدن و پیاده روی - مشکی
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ورزشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">110 هزار تومان</p>
+                                                <del>95 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/party-wear-1.jpg" alt="کفش مجلسی زنانه" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش مجلسی زنانه
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">لباس مهمانی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">78 هزار تومان</p>
+                                                <del>56 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/sports-3.jpg" alt="کفش زنانه پنجه اسپرت" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش زنانه پنجه اسپرت
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ورزشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">240 هزار تومان</p>
+                                                <del>190 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/sports-6.jpg" alt="کفش تکینگ هوا - سفید" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش تکینگ هوا - سفید
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ورزشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/shoe-3.jpg" alt="چکمه با جزئیات جیر" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    چکمه با جزئیات جیر
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">چکمه</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/shoe-1.jpg" alt="کفش رسمی چرم مردانه" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش رسمی چرم مردانه
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">رسمی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">520 هزار تومان</p>
+                                                <del>410 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/shoe-2.jpg" alt="کفش قهوه ای مردانه" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کفش قهوه ای مردانه
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">دم دستی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">180 هزار تومان</p>
+                                                <del>140 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-showcase">
+                            <h2 class="title">بیشترین امتیاز</h2>
+    
+                            <div class="showcase-wrapper has-scrollbar">
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/watch-3.jpg" alt="کیف چرمی ساعت جیبی" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کیف چرمی ساعت جیبی
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ساعت</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">150 هزار تومان</p>
+                                                <del>110 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-3.jpg" alt="گردنبند قلب گوزن نقره ای" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    گردنبند قلب گوزن نقره ای
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">110 هزار تومان</p>
+                                                <del>95 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/perfume.jpg" alt="عطر زنانه تیتان 100 میلی لیتر" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    عطر زنانه تیتان 100 میلی لیتر
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">عطر</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">78 هزار تومان</p>
+                                                <del>56 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/belt.jpg" alt="کمربند برگشت پذیر چرمی مردانه" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    کمربند برگشت پذیر چرمی مردانه
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">کمربند</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">240 هزار تومان</p>
+                                                <del>190 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-2.jpg" alt="انگشتر کلاسیک پلاتین زیرکون" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    انگشتر کلاسیک پلاتین زیرکون
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/watch-1.jpg" alt="ساعت هوشمند حیاتی پلاس" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    ساعت هوشمند حیاتی پلاس
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">ساعت</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">720 هزار تومان</p>
+                                                <del>580 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/shampoo.jpg" alt="بسته های نرم کننده شامپو" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    بسته های نرم کننده شامپو
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">لوازم آرایشی</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">520 هزار تومان</p>
+                                                <del>410 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <a href="#" class="showcase-img-box">
+                                            <img src="./assets/img/products/jewellery-1.jpg" alt="گوشواره طاووس رزگلد" class="showcase-img" width="70">
+                                        </a>
+    
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h4 class="showcase-title">
+                                                    گوشواره طاووس رزگلد
+                                                </h4>
+                                            </a>
+    
+                                            <a href="#" class="showcase-category">جواهرات</a>
+    
+                                            <div class="price-box">
+                                                <p class="price">180 هزار تومان</p>
+                                                <del>140 هزار تومان</del>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- product featured -->
+                    <div class="product-featured">
+                        <h2 class="title">
+                            معامله روز
+                        </h2>
+                        <div class="showcase-wrapper has-scrollbar">
+                            <div class="showcase-container">
+                                <div class="showcase">
+                                    <div class="showcase-banner">
+                                        <img src="./assets/img/products/shampoo.jpg" alt="شامپوی سر و صورت" class="showcase-img">
+                                    </div>
+                                    <div class="showcase-content">
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                        </div>
+                                        <a href="#">
+                                            <h3 class="showcase-title">
+                                                شامپوی سر و صورت
+                                            </h3>
+                                            <p class="showcase-desc">
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                                            </p>
+                                            <div class="price-box">
+                                                <p class="price">150 هزار تومان</p>
+
+                                                <del>100 هزار تومان</del>
+                                            </div>
+
+                                            <button class="add-cart-btn">
+                                                اضافه به سبد خرید
+                                            </button>
+
+                                            <div class="showcase-status">
+                                                <div class="wrapper">
+                                                    <p>
+                                                        فروخته شده: <b>20</b>
+                                                    </p>
+                                                    <p>
+                                                        موجود: <b>40</b>
+                                                    </p>
+                                                </div>
+
+                                                <div class="showcase-status-bar"></div>
+                                            </div>
+                                            <div class="countdown-box">
+                                                <p class="countdown-desc">
+                                                    عجله کن! تخفیف داره تموم میشه:
+                                                </p>
+
+                                                <div class="countdown">
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            00
+                                                        </p>
+                                                        <p class="display-text">
+                                                            ثانیه
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            59
+                                                        </p>
+                                                        <p class="display-text">
+                                                            دقیقه
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            24
+                                                        </p>
+                                                        <p class="display-text">
+                                                            ساعت
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            360
+                                                        </p>
+                                                        <p class="display-text">
+                                                            روز
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="showcase-container">
+                                <div class="showcase">
+                                    <div class="showcase-banner">
+                                        <img src="./assets/img/products/jewellery-1.jpg" alt="گوشواره رزگلد" class="showcase-img">
+                                    </div>
+                                    <div class="showcase-content">
+                                        <div class="showcase-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                        </div>
+                                        <a href="#">
+                                            <h3 class="showcase-title">
+                                                گوشواره رزگلد
+                                            </h3>
+                                            <p class="showcase-desc">
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                                            </p>
+                                            <div class="price-box">
+                                                <p class="price">150 هزار تومان</p>
+
+                                                <del>100 هزار تومان</del>
+                                            </div>
+
+                                            <button class="add-cart-btn">
+                                                اضافه به سبد خرید
+                                            </button>
+
+                                            <div class="showcase-status">
+                                                <div class="wrapper">
+                                                    <p>
+                                                        فروخته شده: <b>20</b>
+                                                    </p>
+                                                    <p>
+                                                        موجود: <b>40</b>
+                                                    </p>
+                                                </div>
+
+                                                <div class="showcase-status-bar"></div>
+                                            </div>
+                                            <div class="countdown-box">
+                                                <p class="countdown-desc">
+                                                    عجله کن! تخفیف داره تموم میشه:
+                                                </p>
+
+                                                <div class="countdown">
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            00
+                                                        </p>
+                                                        <p class="display-text">
+                                                            ثانیه
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            59
+                                                        </p>
+                                                        <p class="display-text">
+                                                            دقیقه
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            24
+                                                        </p>
+                                                        <p class="display-text">
+                                                            ساعت
+                                                        </p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">
+                                                            360
+                                                        </p>
+                                                        <p class="display-text">
+                                                            روز
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- product GRID -->
+                    <div class="product-main">
+                        <h2 class="title">محصول جدید</h2>
+
+                        <div class="product-grid">
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/jacket-3.jpg" width="300" alt="لباس زمستانی مردانه" class="product-img default">
+                                    <img src="./assets/img/products/jacket-4.jpg" width="300" alt="لباس زمستانی مردانه" class="product-img hover">
+
+                                    <p class="showcase-badge">15%</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ژاکت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            لباس زمستانی مردانه
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/shirt-1.jpg" width="300" alt="پیراهن مردانه کتان" class="product-img default">
+                                    <img src="./assets/img/products/shirt-2.jpg" width="300" alt="پیراهن مردانه کتان" class="product-img hover">
+
+                                    <p class="showcase-badge angle black">فروخته شد</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">پیراهن</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            پیراهن مردانه کتان
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/jacket-1.jpg" width="300" alt=" ژاکت تمام زیپ " class="product-img default">
+                                    <img src="./assets/img/products/jacket-2.jpg" width="300" alt=" ژاکت تمام زیپ " class="product-img hover">
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ژاکت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                              ژاکت تمام زیپ
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/clothes-3.jpg" width="300" alt="دامن مشکی" class="product-img default">
+                                    <img src="./assets/img/products/clothes-4.jpg" width="300" alt="دامن مشکی" class="product-img hover">
+
+                                    <p class="showcase-badge angle pink">جدید</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">دامن</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            دامن مشکی
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/shoe-1.jpg" width="300" alt="کفش دم دستی قهوه‌ای" class="product-img default">
+                                    <img src="./assets/img/products/shoe-1_1.jpg" width="300" alt="کفش دم دستی قهوه‌ای" class="product-img hover">
+
+                                    <p class="showcase-badge">15%</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">کفش</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            کفش دم دستی قهوه‌ای
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/watch-1.jpg" width="300" alt="کیف چرمی ساعت" class="product-img default">
+                                    <img src="./assets/img/products/watch-2.jpg" width="300" alt="کیف چرمی ساعت" class="product-img hover">
+
+                                    <p class="showcase-badge angle black">فروخته شد</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ساعت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            کیف چرمی ساعت
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/watch-3.jpg" width="300" alt="ساعت جیبی" class="product-img default">
+                                    <img src="./assets/img/products/watch-4.jpg" width="300" alt="ساعت جیبی" class="product-img hover">
+
+                                    <p class="showcase-badge angle pink">جدید</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ساعت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            ساعت جیبی
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/watch-1.jpg" width="300" alt="ساعت هوشمند" class="product-img default">
+                                    <img src="./assets/img/products/watch-2.jpg" width="300" alt="ساعت هوشمند" class="product-img hover">
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">اعت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            ساعت هوشمند
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/party-wear-1.jpg" width="300" alt="کفش رسمی برای مهمانی" class="product-img default">
+                                    <img src="./assets/img/products/party-wear-2.jpg" width="300" alt="کفش رسمی برای مهمانی" class="product-img hover">
+
+                                    <p class="showcase-badge angle black">فروخته شد</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">لباس مهمانی</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            کفش رسمی برای مهمانی
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/jacket-5.jpg" width="300" alt="لباس زمستانی مردانه" class="product-img default">
+                                    <img src="./assets/img/products/jacket-6.jpg" width="300" alt="لباس زمستانی مردانه" class="product-img hover">
+
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ژاکت</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            لباس زمستانی مردانه
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/sports-1.jpg" width="300" alt="کتانی ورزشی" class="product-img default">
+                                    <img src="./assets/img/products/sports-2.jpg" width="300" alt="کتانی ورزشی" class="product-img hover">
+
+                                    <p class="showcase-badge">15%</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">ورزشی</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            کتانی ورزشی
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="./assets/img/products/shorts-1.jpg" width="300" alt="شورت ورزشی فرانسوی" class="product-img default">
+                                    <img src="./assets/img/products/shorts-2.jpg" width="300" alt="شورت ورزشی فرانسوی" class="product-img hover">
+
+                                    <p class="showcase-badge angle black">فروخته شد</p>
+
+                                    <div class="showcase-actions">
+                                        <button class="btn-action">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="repeat-outline"></ion-icon>
+                                        </button>
+                                        <button class="btn-action">
+                                            <ion-icon name="bag-add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="#" class="showcase-category">شورت ورزشی</a>
+                                    <a href="#">
+                                        <h3 class="showcase-title">
+                                            شورت ورزشی فرانسوی
+                                        </h3>
+                                    </a>
+
+                                    <div class="showcase-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="price-box">
+                                        <p class="price">120 هزار تومان</p>
+                                        <del>100 هزار تومان</del>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials, CTA & Service -->
+        <div>
+            <div class="container">
+                <div class="testimonials-box">
+                    <!-- testomonials -->
+                    <div class="testimonial">
+                        <h2 class="title">گواهینامه</h2>
+                        <div class="testimonial-card">
+                            <img src="./assets/img/testimonial-1.jpg" alt="صغری محمدی" class="testimonial-banner" width="80" height="80">
+
+                            <p class="testimonial-name">صغری محمدی</p>
+                            <p class="testimonial-title">CEO & Founder Invision</p>
+                            <img src="./assets/img/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+                            <p class="testimonial-desc">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-container">
+                        <img src="./assets/img/cta-banner.jpg" alt="کالکشن تابستانی" class="cta-banner">
+                        <a href="#" class="cta-content">
+                            <p class="discount">
+                                25% تخفیف
+                            </p>
+                            <h2 class="cta-title">کالکشن تابستانی</h2>
+                            <p class="cta-text">شروع از 50 هزار تومان</p>
+                            <button class="cta-btn">الان بخر</button>
+                        </a>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="service">
+                        <h2 class="title">سرویس‌های ما</h2>
+                        <div class="service-container">
+                            <a href="#" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="boat-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">ارسال به تمام نقاط ایران</h3>
+                                    <p class="service-desc">برای سفارش 200 هزار تومان</p>
+                                </div>
+                            </a>
+                            <a href="#" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="rocket-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">تحویل یک روز بعد</h3>
+                                    <p class="service-desc">فقط سفارشات تهران</p>
+                                </div>
+                            </a>
+                            <a href="#" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">بهترین پشتیبانی اینترنتی</h3>
+                                    <p class="service-desc">ساعت: 8 صبح - 11 شب</p>
+                                </div>
+                            </a>
+                            <a href="#" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="arrow-undo-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">سیاست بازگشت</h3>
+                                    <p class="service-desc">بازگشت آسان و رایگان</p>
+                                </div>
+                            </a>
+                            <a href="#" class="service-item">
+                                <div class="service-icon">
+                                    <ion-icon name="ticket-outline"></ion-icon>
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="service-title">برگشت 30% پول</h3>
+                                    <p class="service-desc">برای سفارش 500 هزار تومان</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOG -->
+        <div class="blog">
+            <div class="container">
+                <div class="blog-container has-scrollbar">
+                    <div class="blog-card">
+                        <a href="#">
+                            <img src="./assets/img/blog-1.jpg" alt="راهنمای KPIs 2021 خرده فروشی لباس برای مدیران لباس" class="blog-banner" width="300">
+                        </a>
+
+                        <div class="blog-content">
+                            <a href="#" class="blog-category">مد روز</a>
+
+                            <a href="#">
+                                <h3 class="blog-title">راهنمای KPIs 2021 خرده فروشی لباس برای مدیران لباس</h3>
+                            </a>
+
+                            <p class="blog-meta">
+                                با <cite>آقای مدیر</cite> / <time datetime="1401-6-16">6 شهریور - 1401</time>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <a href="#">
+                            <img src="./assets/img/blog-2.jpg" alt="روندهای مد کنار خیابان: چگونه در نبرد پیکاپ پیروز شویم" class="blog-banner" width="300">
+                        </a>
+
+                        <div class="blog-content">
+                            <a href="#" class="blog-category">لباس</a>
+
+                            <a href="#">
+                                <h3 class="blog-title">روندهای مد کنار خیابان: چگونه در نبرد پیکاپ پیروز شویم</h3>
+                            </a>
+
+                            <p class="blog-meta">
+                                با <cite>آقای اصغری</cite> / <time datetime="1401-6-16">6 شهریور - 1401</time>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <a href="#">
+                            <img src="./assets/img/blog-3.jpg" alt="فروشندگان ebt: سهم خود را از درآمد آنلاین اسنپ ادعا کنید" class="blog-banner" width="300">
+                        </a>
+
+                        <div class="blog-content">
+                            <a href="#" class="blog-category">کفش</a>
+
+                            <a href="#">
+                                <h3 class="blog-title">فروشندگان ebt: سهم خود را از درآمد آنلاین اسنپ ادعا کنید</h3>
+                            </a>
+
+                            <p class="blog-meta">
+                                با <cite>آقای محمدی</cite> / <time datetime="1401-6-16">6 شهریور - 1401</time>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <a href="#">
+                            <img src="./assets/img/blog-4.jpg" alt="روندهای مد کنار خیابان: چگونه در نبرد پیکاپ پیروز شویم" class="blog-banner" width="300">
+                        </a>
+
+                        <div class="blog-content">
+                            <a href="#" class="blog-category">الکترونیک</a>
+
+                            <a href="#">
+                                <h3 class="blog-title">روندهای مد کنار خیابان: چگونه در نبرد پیکاپ پیروز شویم</h3>
+                            </a>
+
+                            <p class="blog-meta">
+                                با <cite>آقای مدیر</cite> / <time datetime="1401-6-16">6 شهریور - 1401</time>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-category">
+            <div class="container">
+                <h2 class="footer-category-title">فهرست برند</h2>
+                <div class="footer-category-box">
+                    <h3 class="category-box-title">مد :</h3>
+
+                    <a href="#" class="footer-category-link">تیشرت</a>
+                    <a href="#" class="footer-category-link">پیراهن</a>
+                    <a href="#" class="footer-category-link">شلوار جین</a>
+                    <a href="#" class="footer-category-link">ژاکت</a>
+                    <a href="#" class="footer-category-link">لباس و روپوش</a>
+                    <a href="#" class="footer-category-link">لباس زیر</a>
+                    <a href="#" class="footer-category-link">جوراب</a>
+                </div>
+
+                <div class="footer-category-box">
+                    <h3 class="category-box-title">کفش :</h3>
+
+                    <a href="#" class="footer-category-link">ورزشی</a>
+                    <a href="#" class="footer-category-link">رسمی</a>
+                    <a href="#" class="footer-category-link">بوت</a>
+                    <a href="#" class="footer-category-link">دم دستی</a>
+                    <a href="#" class="footer-category-link">کفش گاوچرونی</a>
+                    <a href="#" class="footer-category-link">کفش ایمنی</a>
+                    <a href="#" class="footer-category-link">کفش مهمانی</a>
+                    <a href="#" class="footer-category-link">مارک دار</a>
+                    <a href="#" class="footer-category-link">اولین کپی</a>
+                    <a href="#" class="footer-category-link">کفش بلند</a>
+                </div>
+
+                <div class="footer-category-box">
+                    <h3 class="category-box-title">جواهرات :</h3>
+
+                    <a href="#" class="footer-category-link">گردنبند</a>
+                    <a href="#" class="footer-category-link">گوشواره</a>
+                    <a href="#" class="footer-category-link">حلقه ازدواج</a>
+                    <a href="#" class="footer-category-link">آویز</a>
+                    <a href="#" class="footer-category-link">کریستال</a>
+                    <a href="#" class="footer-category-link">النگو</a>
+                    <a href="#" class="footer-category-link">دستبند</a>
+                    <a href="#" class="footer-category-link">پیرسینگ</a>
+                    <a href="#" class="footer-category-link">اولین کپی</a>
+                    <a href="#" class="footer-category-link">زنجیر</a>
+                    <a href="#" class="footer-category-link">گوشواره</a>
+                    <a href="#" class="footer-category-link">حلقه ازدواج</a>
+                </div>
+
+                <div class="footer-category-box">
+                    <h3 class="category-box-title">لوازم آرایشی :</h3>
+
+                    <a href="#" class="footer-category-link">شامپو</a>
+                    <a href="#" class="footer-category-link">شامپو بدن</a>
+                    <a href="#" class="footer-category-link">صابون</a>
+                    <a href="#" class="footer-category-link">پک لوازم آرایشی</a>
+                    <a href="#" class="footer-category-link">آستر</a>
+                    <a href="#" class="footer-category-link">رژ لب</a>
+                    <a href="#" class="footer-category-link">عطر</a>
+                    <a href="#" class="footer-category-link">صابون بدن</a>
+                    <a href="#" class="footer-category-link">اسکراب</a>
+                    <a href="#" class="footer-category-link">ژل مو</a>
+                    <a href="#" class="footer-category-link">رنگ مو</a>
+                    <a href="#" class="footer-category-link">ضد آفتاب</a>
+                    <a href="#" class="footer-category-link">آستر</a>
+                    <a href="#" class="footer-category-link">رژ لب</a>
+                    <a href="#" class="footer-category-link">عطر</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <div class="container">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">دسته بندی محبوب</h2>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">مد</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">الکترونیک</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">لوازم آرایشی</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">سلامت</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">ساعت</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">محصول</h2>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">کاهش قیمت</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">محصول جدید</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">بهترین فروش</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">تماس با ما</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">نقشه سایت</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">کمپانی ما</h2>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">مد</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">تحویل</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">اطلاع قانونی</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">شرایط و ضوابط</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">درباره ما</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">پرداخت امن</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">سرویس</h2>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">کاهش قیمت</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">محصول جدید</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">بهترین فروش</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">ارتباط با ما</a>
+                    </li>
+
+                    <li class="footer-nav-item">
+                        <a href="#" class="footer-nav-link">نقشه سایت</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">ارتباط</h2>
+                    </li>
+
+                    <li class="footer-nav-item flex">
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+
+                        <address class="content">
+                            ایران - تهران -
+                            شهرری - میدان معلم - مجتمع قدس - یاس 2 - طبقه 4
+                        </address>
+                    </li>
+
+                    <li class="footer-nav-item flex">
+                        <div class="icon-box">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </div>
+
+                        <a href="tel:+989029129292" class="footer-nav-link">09029129292</a>
+                    </li>
+
+                    <li class="footer-nav-item flex">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+
+                        <a href="mailto: S.Movakel@gmail.com" class="footer-nav-link">S.Movakel@Gmail.com</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <h2 class="nav-title">
+                            ما را در فضای مجازی دنبال کنید
+                        </h2>
+                    </li>
+
+                    <li>
+                        <ul class="social-link">
+                            <li class="footer-nav-item">
+                                <a href="#" class="footer-nav-link">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+        
+                            <li class="footer-nav-item">
+                                <a href="#" class="footer-nav-link">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+        
+                            <li class="footer-nav-item">
+                                <a href="#" class="footer-nav-link">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+        
+                            <li class="footer-nav-item">
+                                <a href="#" class="footer-nav-link">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <img src="./assets/img/payment.png" alt="متد پرداخت" class="payment-img">
+
+                <p class="copyright">
+                    برای استفاده از مطالب <a href="#">Anon</a> داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام حقوق اين وب‌سايت نیز برای شرکت نوآوران فن آوازه (فروشگاه آنلاین Anon) است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- js -->
+    <script src="./assets/js/main.js"></script>
+
+    <!-- ionicon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
